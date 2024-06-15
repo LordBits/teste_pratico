@@ -1,7 +1,7 @@
-## CRIADO EM DOTNET 8.0 (NECESSÁRIO PARA RODAR)
+## CRIADO EM DOTNET 8.0
 
 ## ALTERAÇÃO DE BANCO DE DADOS
- Para rodar na máquina, é necessário que se altere no arquivo Data/AppDbContext.cs a porta da sua máquina. (A que foi utilizado na criação é a 3306)
+    Para rodar na máquina, é necessário que se altere no arquivo Data/AppDbContext.cs a porta da sua máquina. (A que foi utilizado na criação é a 3306)
 
  ## SWAGGER
     localhost:5142/swagger/index.html
@@ -33,10 +33,22 @@ PUT
 DELETE
     localhost:(sua porta)/cadeiras/1
 
- ## CONDIÇÕES
+ ## CONDIÇÕES PARA CADASTRO DA CADEIRA
+    * Ao ato de cadastrar, são obrigatório os campos numero (int), descricao (string) e valor (decimal);
+    * Não poderá cadastrar cadeira se o campo numero já possuir algum igual;
+    * Não poderá atualizar cadeira se não passar nenhum parametro; (Bad request)
+    * Para atualizar, ao menos um dos campos obrigatórios no cadastro, é necessário estar dentro do objeto json para fazer a atualização da cadeira.
 
-    Não pode salvar uma cadeira que possuir a mesma numeração da outra, inclusive isso também ocorrerá se tentar atualizar uma cadeira com a mesma numeração de uma já salva.
+## PARA RODAR
+    Necessário ter instalado os frameworks:
 
+    * Microsoft.EntityFrameworkCore;
+    * MySql.EntityFrameworkCore;
+    * Microsoft.EntityFrameworkCore.Design.
 
+    IDE (Qualquer desde que tenha compilador para C# .NET 8.0 e seus respectivos frameworks)
 
+## DESENVOLVIDO EM...
 
+    * Utilizado a IDE Visual Studio Code;
+    * Para testes de entrada e saída, foi utilizado o Postman.
